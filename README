@@ -1,0 +1,31 @@
+awful64 - Build and run "afulnx_64" (AMI Firmware Update Utility) v5.14.02.0026 on modern Linux kernels
+(Tested on Alpine Linux with Linux Kernel 6.12)
+
+Usage: ./awful64.sh ARGS...
+for example:
+        Display current ROM ID
+	./awful64.sh /S
+
+	Flash BIOS via UEFI Capsule
+	./awful64.sh imageM1U.ROM /p /b /n /r /sp /capsule
+
+Kernel module build instructions:
+
+1. Download and unpack kernel driver
+./prepare-DriverSource.sh
+
+2. Build kernel driver
+./build-DriverSource.sh <path-to-kernel-sources>
+
+3. Load kernel driver
+./insmod-amifldrv.sh
+
+Prerequisites:
+
+To build the kernel module, you need everything required to build a Linux kernel,
+especially gcc and make, but also bison and flex.
+
+The scripts automatically install the required packages for Alpine Linux (if running on such a system)
+
+In order to extract the kernel module from the afulnx_64 binary, we briefly need root privileges.
+The scripts call "sudo" to elevate privileges; please make sure your user has sudo access.
