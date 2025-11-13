@@ -29,3 +29,8 @@ The scripts automatically install the required packages for Alpine Linux (if run
 
 In order to extract the kernel module from the afulnx_64 binary, we briefly need root privileges.
 The scripts call "sudo" to elevate privileges; please make sure your user has sudo access.
+
+Also make sure that you have libstdc++ (and on Alpine Linux, gcompat) installed:
+
+apk add libstdc++ gcompat
+
