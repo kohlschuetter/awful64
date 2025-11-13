@@ -7,7 +7,7 @@ index a5212de..fb9d2df 100644
  
  	if ((vma->vm_flags & VM_WRITE) && !(vma->vm_flags & VM_SHARED)) return -EINVAL;
 -	vma->vm_flags |= VM_LOCKED;
-+	vm_flags_set(vma, VM_LOCKED);
++	vm_flags_reset(vma, vma->vm_flags | VM_LOCKED);
  
  #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 0))
  	status = remap_pfn_range(vma, vma->vm_start, vma->vm_pgoff, size, PAGE_SHARED);
