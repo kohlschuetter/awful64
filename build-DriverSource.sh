@@ -8,4 +8,4 @@ fi
 sudo apk add alpine-sdk bison flex
 
 set -x
-make -C "$1" M="$(pwd)/DriverSource"
+make -C "$1" M="$(pwd)/DriverSource" KCFLAGS="-DBUILD_AMIFLDRV_MOD=1"
