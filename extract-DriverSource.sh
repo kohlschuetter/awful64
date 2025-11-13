@@ -23,6 +23,16 @@ if [[ -f /usr/local/bin/uname ]]; then
   renameUname=1
 fi
 
+function atend() {
+  if [[ $renameUname -eq 1 ]]; then
+    mv -fv /usr/local/bin/uname.orig /usr/local/bin/uname
+  else
+    rm -fv /usr/local/bin/uname
+  fi
+}
+
+trap atend EXIT
+
 cat >/usr/local/bin/uname <<EOT
 #!/bin/sh
 
@@ -47,7 +57,3 @@ EOT
 chmod 755 "$afulnx"
 
 "$afulnx" /MAKEDRV
-
-if [[ $renameUname -eq 1 ]]; then
-  mv -fv /usr/local/bin/uname.orig /usr/local/bin/uname
-fi
