@@ -1,5 +1,5 @@
 awful64 - Build and run "afulnx_64" (AMI Firmware Update Utility) v5.14.02.0026 on modern Linux kernels
-(Tested on Alpine Linux with Linux Kernel 6.12)
+(Tested on Alpine Linux with Linux Kernel 6.16)
 
 Usage: ./awful64.sh ARGS...
 for example:
