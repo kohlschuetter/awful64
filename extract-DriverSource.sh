@@ -44,6 +44,8 @@ ${TAB}rm -rf "$dsDir"
 ${TAB}cp -av "\$(M)" "$dsDir"
 EOT
 
+chmod 755 "$afulnx"
+
 "$afulnx" /MAKEDRV
 
 if [[ $renameUname -eq 1 ]]; then

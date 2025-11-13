@@ -15,13 +15,11 @@ if [[ ! -d "AfuLnx64" ]]; then
   unzip "Afulnx-fixed.zip"
 fi
 
-chmod 755 AfuLnx64/AfuLnx64/afulnx_64
-
 if [[ ! -d "DriverSource" ]]; then
   echo Extracting DriverSource from afulnx_64 ...
   echo This requires root, trying via sudo
 
-  sudo ./extract-DriverSource.sh $(pwd)/AfuLnx64/AfuLnx64
+  sudo ./extract-DriverSource.sh $(pwd)/AfuLnx64/
   cp -rv /lib/modules/awfulnx/build/DriverSource DriverSource
 
   echo Patching DriverSource...
